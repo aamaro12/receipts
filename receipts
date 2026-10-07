@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Run Vibe for Receipts: always with the legacy harness (the unified harness gives hooks no transcript, so
+# nothing would be checked), then print the verdict of the check, or a loud NOT CHECKED when there was none.
+# usage, from a demo folder:  ../../receipts                                                          (interactive)
+#                             TN_TIMEOUT=300 ../../receipts -p "Using /abs/doc.pdf, ..." --trust </dev/null   (headless)
+# TN_TIMEOUT: seconds before Vibe is stopped (the perl alarm guard used for every headless run); unset: no limit.
+REPO="$(cd "$(dirname "$0")" && pwd)"
+PY="${TN_PYTHON:-$REPO/server/.venv/bin/python}"      # TN_PYTHON and TN_VIBE let the tests stand in for both
+verdict() {
+  if [ ! -x "$PY" ]; then                             # not installed here: say so loudly instead of a Python error
+    [ "${1:-}" = "--count" ] && { echo 0; return; }
+    printf '%s\n' "$(printf '!%.0s' $(seq 1 78))" "!!! traceable: NOT CHECKED: Receipts is not installed here; run ./install.sh first" "$(printf '!%.0s' $(seq 1 78))"
+    return
+  fi
+  PYTHONPATH="$REPO/server" "$PY" -m traceable.verdict "$@"
+}
+before="$(verdict --count "$PWD" 2>/dev/null || echo 0)"
+# --trust: the folder's hooks (the check) run only in a trusted folder; this trusts it for this run only.
+# A model request that stalls is cut at 120 s and retried (Vibe's default waits 720 s; a live run sat 7 minutes, 29 Sep).
+# The model: Mistral Medium 3.5 unless VIBE_ACTIVE_MODEL says otherwise (a Vibe experiment, 29 Sep, made GLM-5.3 the
+# active model on this machine).
+VIBE_API_TIMEOUT="${VIBE_API_TIMEOUT:-120}" VIBE_ACTIVE_MODEL="${VIBE_ACTIVE_MODEL:-mistral-medium-3.5}" perl -e 'alarm shift; exec @ARGV' "${TN_TIMEOUT:-0}" "${TN_VIBE:-vibe}" --legacy-harness --trust --disabled-tools bash "$@"
+status=$?
+verdict "$PWD" "$before"
+exit "$status"

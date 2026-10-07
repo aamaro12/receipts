@@ -1,0 +1,18 @@
+**No, container MSKU4417302 cannot be released.**
+
+## Comparison Summary
+
+| Document | Gross Weight | Declared Value |
+|----------|--------------|----------------|
+| **Bill of Lading** | 18,420 kg [D1:p1:b10] | — |
+| **Commercial Invoice** | — | USD 759,500.00 [D2:p1:b8] |
+| **Arrival Notice** | 19,240 kg [D3:p1:b5] | USD 759,500.00 [D3:p1:b6] |
+
+## Analysis
+
+**Gross weight discrepancy:** The verified weight at terminal (19,240 kg [D3:p1:b5]) exceeds the B/L weight (18,420 kg [D1:p1:b10]) by **4.45% [C1]**. The arrival notice explicitly states that release is withheld where the verified gross weight differs from the B/L by more than 2% [D3:p1:b7].
+
+**Declared value:** Matches exactly across Commercial Invoice and Arrival Notice (USD 759,500.00 [D2:p1:b8][D3:p1:b6]).
+
+**Decision:** Release is **withheld** due to the gross weight variance exceeding the 2% [D3:p1:b7] tolerance threshold.
+traceable: checked: allow · 10 figures: 9 traced, 1 calculated, 0 untraced · report: demo/logistics/.traceable/report.html

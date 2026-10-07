@@ -1,0 +1,17 @@
+Question (an earlier version of ./receipts, 25 Sep 2026, 33 s):
+"The CFO commentary I uploaded is .../NVIDIA_Q3FY24_CFO_Commentary.pdf. Compare NVIDIA's Q3 fiscal 2024 Data Center
+revenue from that document with the latest reported quarter's Data Center revenue from the web, and compute the growth."
+
+Answer:
+| Data Center revenue, Q3 FY24 (CFO commentary) | $14,514 [D1:p1:c1] |
+| Data Center revenue, latest reported quarter (Q2 FY27, ended July 26, 2026) | $89.0 billion [W1] |
+| Growth between the two | 513.2% [C1] |
+... roughly a 6.13x multiple [C2]. The comparison spans eleven fiscal quarters (cumulative growth, not year over year).
+
+traceable: checked: allow · 7 figures: 4 traced, 3 calculated, 0 untraced
+Screenshots: citations_quote.png (the quote's table highlighted on page 1), citations_web.png (source title, link and
+stored snippets), citations_calc.png (the growth calculation and its two inputs).
+
+Library run (25 Sep 2026, 22 s), a Mistral Library holding the public RELX 2024 income statement excerpt:
+"RELX's 2024 revenue was £9,434m [L1] and its operating profit was £2,861m [L1], giving an operating margin of 30.3% [C3]."
+traceable: checked: allow · 3 figures: 2 traced, 1 calculated, 0 untraced. Screenshot: citations_library.png

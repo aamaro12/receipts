@@ -1,0 +1,38 @@
+# Answer key by hand from the letter: page 11 ($ millions, GMV $ billions), pages 17 and 18 ($ thousands).
+- id: h1
+  expect:
+    - $576.157m              # total revenue, net: $576.2m (p11), $576,157K (p18)
+    - -27.9%                 # operating margin as stated (p11); -160,789 / 576,157 = -27.9071%
+- id: h2
+  expect:
+    - -$133.936m             # net loss: $(133,936)K (p18), $(133.9)m (p11)
+- id: h3
+  expect:
+    - 6.64720%               # 736,946 / 691,013 - 1
+  allow:
+    - $736.946m
+    - $691.013m
+- id: h4
+  expect:
+    - -$310.035m             # the 2023 column, not the 2024 one ($(160,789)K)
+- id: h5
+  expect:
+    - $1,272.760m            # $1,272,760K (p17)
+- id: h6
+  expect:
+    - 10.45870%              # stock-based compensation 77,075 / total operating expenses 736,946
+  allow:
+    - $77.075m
+    - $736.946m
+- id: h7
+  expect:
+    - 51.23104%              # 576,157 / 380,978 - 1; the letter rounds to 51%
+  allow:
+    - $576.157m
+    - $380.978m
+- id: h8
+  expect:
+    - $6.3bn                 # GMV, page 11, in billions
+    - 9.2%                   # total revenue as a % of GMV, as stated (576.2 / 6,300 = 9.15%)
+  allow:
+    - $576.157m

@@ -1,0 +1,88 @@
+# Answer key, computed by hand from the documents. RELX: GBPm, year to 31 December, EPS in pence. Diageo: $ million,
+# year to 30 June, EPS in US cents. Logistics: the synthetic pack (demo/make_logistics_docs.py).
+# expect: figures a correct answer must contain, written precisely (an answer may round them as far as the check
+# allows, but must keep the unit, the currency and the sign); allow: other true figures an answer may add;
+# must_say: case-insensitive regular expressions the answer must match. Any other figure that is not stated in the
+# question's documents, and not a number from the question, counts as wrong.
+- id: f1
+  expect:
+    - £9,434m                # revenue 2024
+    - £2,861m                # operating profit 2024
+- id: f2
+  expect:
+    - $20,269m               # net sales, year to 30 June 2024
+    - $6,001m                # operating profit
+- id: f3
+  expect:
+    - 30.32648%              # RELX 2,861 / 9,434
+    - 5.02404%               # RELX (9,434 / 8,553) ** (1 / 2) - 1: 2022 to 2024 is 2 years
+    - 29.60679%              # Diageo 6,001 / 20,269
+    - -0.603792%             # Diageo (20,269 / 20,516) ** (1 / 2) - 1
+- id: f4
+  expect:
+    - 23.97341%              # tax expense 613 / profit before tax 2,557
+- id: f5
+  expect:
+    - 9.5p                   # basic EPS 103.6p - 94.1p
+    - 10.09564%              # 9.5 / 94.1
+- id: f6
+  expect:
+    - 10.41594%              # net finance costs 298 / operating profit 2,861
+- id: f7
+  expect:
+    - -$286m                 # 20,269 - 20,555
+    - -1.39139%              # -286 / 20,555
+- id: f8
+  expect:
+    - 0.719690pp             # 30.32648% - 29.60679%
+  allow:
+    - 30.32648%
+    - 29.60679%
+  must_say:
+    - 'RELX'
+- id: t1
+  expect:
+    - $20,269m               # written in billions: $20.3bn
+    - $6,001m                # $6.00bn
+- id: t2
+  expect:
+    - £2,682m                # the 2023 column, next to the 2024 one
+    - 29.27628%              # 2,682 / 9,161
+- id: t3
+  expect:
+    - 173.2c                 # Diageo reports EPS in US cents, not pence
+    - 196.3c
+    - -23.1c
+  allow:
+    - -11.7677%              # -23.1 / 196.3
+  must_say:
+    - 'cent'
+- id: t4
+  must_say:
+    - 'fiscal|financial year'
+    - '30 June|June 30'
+  allow:
+    - 26.9861%               # the year to 30 June 2023: 5,547 / 20,555
+    - 29.60679%              # the year to 30 June 2024
+- id: l1
+  expect:
+    - 18,420 kg              # bill of lading
+    - 19,240 kg              # arrival notice (verified weight at terminal)
+    - 820 kg
+  allow:
+    - 4.45168%
+- id: l2
+  expect:
+    - 820 kg
+    - 4.45168%               # 820 / 18,420, above the 2% limit
+  allow:
+    - 18,420 kg
+    - 19,240 kg
+    - USD 759,500.00
+  must_say:
+    - 'hold|withh|not be released|cannot be released|should not be released|do not release|not release'
+- id: l3
+  expect:
+    - USD 759,500.00
+  must_say:
+    - 'match|same|consistent|agree|identical|\byes\b'

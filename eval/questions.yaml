@@ -1,0 +1,64 @@
+# Receipts eval: 8 finance questions, 4 traps and 3 logistics questions.
+# docs: relx and diageo (demo/finance); bol, invoice and arrival (demo/logistics). run_eval.py puts
+# "Using <absolute paths of the docs>, " in front of each question. It reads a small YAML subset (see read_yaml):
+# one "key: value" per line, lists as [a, b] or "- item" lines, and quotes around any text with ": " in it.
+- id: f1
+  kind: finance
+  docs: [relx]
+  question: "What were RELX's 2024 revenue and operating profit?"
+- id: f2
+  kind: finance
+  docs: [diageo]
+  question: "What were Diageo's FY2024 net sales and operating profit? Diageo's fiscal year ends on 30 June."
+- id: f3
+  kind: finance
+  docs: [relx, diageo]
+  question: "What were each company's 2024 operating margin and 2022-2024 revenue CAGR? Use net sales as Diageo's revenue; Diageo's fiscal year ends on 30 June."
+- id: f4
+  kind: finance
+  docs: [relx]
+  question: "What was RELX's 2024 effective tax rate, meaning tax expense over profit before tax?"
+- id: f5
+  kind: finance
+  docs: [relx]
+  question: "How did RELX's basic earnings per share change from 2023 to 2024, in pence and in percent?"
+- id: f6
+  kind: finance
+  docs: [relx]
+  question: "What were RELX's 2024 net finance costs as a share of its operating profit?"
+- id: f7
+  kind: finance
+  docs: [diageo]
+  question: "By how much did Diageo's net sales change from FY2023 to FY2024, in dollars and in percent? Diageo's fiscal year ends on 30 June."
+- id: f8
+  kind: finance
+  docs: [relx, diageo]
+  question: "Which company had the higher 2024 operating margin, and by how many percentage points? Use net sales as Diageo's revenue; Diageo's fiscal year ends on 30 June."
+- id: t1
+  kind: trap-scale
+  docs: [diageo]
+  question: "What were Diageo's FY2024 net sales and operating profit, in billions of dollars? Diageo's fiscal year ends on 30 June."
+- id: t2
+  kind: trap-year
+  docs: [relx]
+  question: "What were RELX's 2023 operating profit and 2023 operating margin?"
+- id: t3
+  kind: trap-cents
+  docs: [diageo]
+  question: "What were Diageo's basic earnings per share in FY2024 and FY2023, in pence, and how much did they change? Diageo's fiscal year ends on 30 June."
+- id: t4
+  kind: trap-year-end
+  docs: [diageo]
+  question: "What were Diageo's net sales and operating margin for calendar year 2023 (January to December 2023)?"
+- id: l1
+  kind: logistics
+  docs: [bol, arrival]
+  question: "What gross weight do the bill of lading and the arrival notice give for container MSKU4417302, and what is the difference?"
+- id: l2
+  kind: logistics
+  docs: [bol, invoice, arrival]
+  question: "Can we release container MSKU4417302? Compare gross weight and declared value across the bill of lading, commercial invoice and arrival notice."
+- id: l3
+  kind: logistics
+  docs: [invoice, arrival]
+  question: "Does the declared value of container MSKU4417302 on the commercial invoice match the arrival notice?"

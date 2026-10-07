@@ -1,0 +1,66 @@
+# Development set on public filings (5 Oct 2026): the 16 questions where the thousands-as-millions bug was found.
+# Affirm FQ1'25 and FQ4'24 earnings supplements ($ in thousands) and NVIDIA's Q3 FY24 CFO commentary ($ in millions).
+- id: a1
+  kind: filing
+  docs: [affirm1]
+  question: "What were Affirm's total revenue, net and total transaction costs for the three months ended September 30, 2024?"
+- id: a2
+  kind: filing
+  docs: [affirm1]
+  question: "For the three months ended September 30, 2024, what was Affirm's revenue less transaction costs as a percentage of total revenue, net?"
+- id: a3
+  kind: filing
+  docs: [affirm1]
+  question: "By how much did Affirm's Gross Merchandise Value grow, in percent, from the three months ended September 30, 2023 to the three months ended September 30, 2024?"
+- id: a4
+  kind: trap-scale
+  docs: [affirm1]
+  question: "What was Affirm's provision for credit losses as a percentage of Gross Merchandise Value for the three months ended September 30, 2024?"
+- id: a5
+  kind: trap-year
+  docs: [affirm1]
+  question: "What was Affirm's total revenue, net in the three months ended December 31, 2023?"
+- id: a6
+  kind: filing
+  docs: [affirm1]
+  question: "What were Affirm's operating income (loss) and operating margin for the twelve months ended June 30, 2024?"
+- id: n1
+  kind: filing
+  docs: [nvidia]
+  question: "What were NVIDIA's GAAP revenue and GAAP operating income in Q3 fiscal 2024?"
+- id: n2
+  kind: filing
+  docs: [nvidia]
+  question: "What was NVIDIA's GAAP operating margin in Q3 fiscal 2024?"
+- id: n3
+  kind: filing
+  docs: [nvidia]
+  question: "What share of NVIDIA's Q3 fiscal 2024 revenue came from the Data Center market platform?"
+- id: n4
+  kind: trap-gaap
+  docs: [nvidia]
+  question: "By how many percentage points did NVIDIA's non-GAAP gross margin exceed its GAAP gross margin in Q3 fiscal 2024?"
+- id: b1
+  kind: filing
+  docs: [affirm4]
+  question: "What were Affirm's total revenue, net and operating income (loss) for the three months ended June 30, 2024?"
+- id: b2
+  kind: filing
+  docs: [affirm4]
+  question: "What was Affirm's GAAP operating margin for the three months ended June 30, 2024?"
+- id: b3
+  kind: filing
+  docs: [affirm4]
+  question: "By how much did Affirm's funding costs grow, in percent, from the three months ended June 30, 2023 to the three months ended June 30, 2024?"
+- id: b4
+  kind: trap-year
+  docs: [affirm4]
+  question: "What was Affirm's revenue less transaction costs for the three months ended June 30, 2023?"
+- id: b5
+  kind: trap-scale
+  docs: [affirm4]
+  question: "What were Affirm's total transaction costs as a percentage of Gross Merchandise Value for the three months ended June 30, 2024?"
+- id: b6
+  kind: cross-document
+  docs: [affirm4, affirm1]
+  question: "By how much did Affirm's total revenue, net grow, in percent, from the three months ended June 30, 2024 to the three months ended September 30, 2024?"

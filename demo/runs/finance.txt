@@ -1,0 +1,5 @@
+| Company | 2024 operating margin | 2022-2024 revenue CAGR |
+|---------|----------------------|------------------------|
+| RELX | 30.3% [C1] | 5.02% [C2] |
+| Diageo | 29.6% [C3] | -0.604% [C4] |
+traceable: checked: allow · 4 figures: 0 traced, 4 calculated, 0 untraced · report: demo/finance/.traceable/report.html

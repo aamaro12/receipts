@@ -1,0 +1,85 @@
+# Answer key by hand from the filings: Affirm supplements pages 42, 44 and 45 ($000s); NVIDIA page 1 ($ millions).
+- id: a1
+  expect:
+    - $698.479m              # total revenue, net, $698,479K
+    - $413.352m              # total transaction costs, $413,352K
+- id: a2
+  expect:
+    - 40.82113%              # 285,127 / 698,479
+  allow:
+    - $285.127m
+    - $698.479m
+- id: a3
+  expect:
+    - 35.26794%              # GMV $7,598M / $5,617M - 1
+  allow:
+    - $7,598m
+    - $5,617m
+- id: a4
+  expect:
+    - 2.10350%               # 159,824K / 7,598,000K: thousands against millions
+  allow:
+    - $159.824m
+    - $7,598m
+- id: a5
+  expect:
+    - $591.110m              # the December 31, 2023 column, not September 30, 2024
+- id: a6
+  expect:
+    - -$615.847m             # operating loss, twelve months ended June 30, 2024
+    - -26.51086%             # -615,847 / 2,322,999
+  allow:
+    - $2,322.999m
+- id: n1
+  expect:
+    - $18,120m
+    - $10,417m
+- id: n2
+  expect:
+    - 57.48896%              # 10,417 / 18,120
+  allow:
+    - $18,120m
+    - $10,417m
+- id: n3
+  expect:
+    - 80.09934%              # 14,514 / 18,120
+  allow:
+    - $14,514m
+    - $18,120m
+- id: n4
+  expect:
+    - 1.0pp                  # 75.0% - 74.0%
+  allow:
+    - 75.0%
+    - 74.0%
+- id: b1
+  expect:
+    - $659.185m
+    - -$73.460m
+- id: b2
+  expect:
+    - -11.14406%             # -73,460 / 659,185
+  allow:
+    - $659.185m
+    - -$73.460m
+- id: b3
+  expect:
+    - 51.18080%              # 95,256 / 63,008 - 1
+  allow:
+    - $95.256m
+    - $63.008m
+- id: b4
+  expect:
+    - $182.078m              # the June 30, 2023 column, not June 30, 2024 ($309,398K)
+- id: b5
+  expect:
+    - 4.83064%               # 349,787K / 7,241,000K: thousands against millions
+  allow:
+    - $349.787m
+    - $7,241m
+- id: b6
+  expect:
+    - 5.96100%               # 698,479 / 659,185 - 1
+  allow:
+    - $698.479m
+    - $659.185m
