@@ -76,3 +76,7 @@ and writes the check's hook into each demo folder.
 1. Typed figure spans `{value, unit, cite}` and input references on tool results. `ToolExecutionEntry.info` already allows extra properties, so computed figures could carry their inputs without breaking the API.
 2. A per-figure verify step, as a guardrail or a Studio judge, with a policy to retry, flag or block.
 3. A metric in Studio observability: the share of figures traced per agent or workflow, and wrong figures caught before the user sees them.
+
+## Licence
+
+MIT, for the code. The filings and annual-report pages in `demo/` belong to their companies.

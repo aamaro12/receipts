@@ -58,7 +58,7 @@ Read by hand from `eval/denials.md` on 24 Sep 2026. There were 18 denials across
 | full/t4/3, denials 2 and 3 | "Operating margin: 27.0% [C1]", followed by the line "[C1] = 5,547 / 20,555 = 27.0%" | The explanation line put the citation before its figure, a format the check still rejects (spec §9) | 2 |
 | full/l3/2, denial 1 | "USD 759,500.00" | The citations were placed away from the figure | 1 |
 
-The other 14 denials flagged real problems:
+The other 14 denials flagged genuine problems:
 - uncited figures;
 - changes and derived figures without a calculation;
 - a phantom [C1];
@@ -66,7 +66,7 @@ The other 14 denials flagged real problems:
 
 ## Notes on scoring
 
-The runs were re-scored with `--score-only` after two fixes to the scorer and one to the figure grammar. All three applied to every arm, each pinned by a test built from the real answer that exposed it:
+The runs were re-scored with `--score-only` after two fixes to the scorer and one to the figure grammar. All 3 applied to every arm, each pinned by a test built from the actual answer that exposed it:
 1. **Formula lines are working, not claims.** A line with "=" and an operator is not scored as a claim; its result may still supply a key figure. Example: read/f3/1 had been marked wrong for "(£9,434/£8,553)^(1/2) – 1 = 0.0504".
 2. **Parentheses and "Yes".** A parenthesised amount in prose is read as an aside, not a negative (calc/l2). "Yes" affirms a match (full/l3/2).
 3. **Abbreviated dates (after the final code review).** "31 Dec" and "30 Jun" were read as the figures '31' and '30' (read/f3/3, read/f8/1), because only full month names were masked. The fix to the figure grammar applies to the check and the scorer alike. It removed these 4 date fragments from the read arm's wrong figures (17 to 13) and changed nothing else.
